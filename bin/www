@@ -1,0 +1,17 @@
+#!/usr/bin/env node
+var debug = require('debug')('my-application');
+var app = require('../app');
+
+var server = require('http').createServer(app);
+//LOBAL.io = require('socket.io')(server);
+//GLOBAL.websocket = io.listen(server);
+
+/*websocket.on('connection', function(socket){
+    console.log("connected");
+});*/
+
+app.set('port', process.env.PORT || 3000);
+
+server = app.listen(app.get('port'), function() {
+  debug('Express server listening on port ' + server.address().port);
+});

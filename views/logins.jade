@@ -1,0 +1,46 @@
+extends layout
+
+block content
+	div(id="bodycontent")
+		div(id="content")
+			div(id="title")
+				div(id="titlehead")
+					h1(id="WebTitle") OPUS
+					p(id="errormsg")  #{Message}
+					div(class="log")
+						div( id="signcard")
+							form(id ="login", method ="post", action="/relogin")
+								h3 Sing In
+								input(type="text", name="username", placeholder="Username", class = "username")
+								br
+								input(type="password", name="password", placeholder ="Password", class = "password")
+								br
+								input(id="SignIn", type="submit", value="Sign In")
+
+						div( id="signupcard")
+							form(id ="newuser", method ="post", action="/newuser")
+								h3 Sing Up
+								input(type="text", name="username", placeholder="Choose your username", class = "username")
+								br
+								input(type="password", name="password", id="passwords", placeholder ="Password", class = "password")
+								br
+								input(type="password", id="confirmPassword", placeholder="Confirm Password", onkeyup="checkPass(); ", class = "password")
+								span(id="MatchMsg")
+								br
+								input(id = "singup", type="submit", value="Sign Up")
+	script.
+			function checkPass(){
+				var pass1 = document.getElementById("passwords")
+				var pass2 = document.getElementById("confirmPassword")
+				var message = document.getElementById("MatchMsg")
+				var goodColor = "#00B22A";
+				var badColor = "#C22230";
+				if(pass1.value==pass2.value){
+					pass2.style.backgroundColor=goodColor;
+					message.style.color = goodColor;
+					}
+				else{
+					pass2.style.backgroundColor = badColor;
+					message.style.color = badColor;
+					}
+			}

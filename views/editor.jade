@@ -1,0 +1,44 @@
+extends layout
+
+block content
+	div(id="ineditortxt")
+		h1(name="headings") #{title}
+		a(href='/signout', class='text-center new-account') Sign Out
+		div(id="editor")
+			|public class #{title}{
+			|	public static void main(String[] args) {
+			|   
+			|	}
+			|}
+		script(src="src/ace.js", type="text/javascript")
+		script(type="text/javascript").
+			//var myRequest = new XMLHttpRequest();
+			var editor=ace.edit("editor");
+			editor.setTheme("ace/theme/monokai");
+			editor.getSession().setMode("ace/mode/java");
+			$(document).ready(function(){
+				$("#save").click(function(event){
+					var content = editor.getValue();
+					$.ajax({
+						url:'/getcode',
+						type:'POST',
+						data: {'code': content},
+						processData: 'false',
+					});
+					event.preventDefault();
+					return false;
+					});
+				});
+			$(document).ready(function(){
+				$("#run").click(function(event){
+					$.ajax({
+						url:'/runcode',
+						type:'POST',
+						dataType: 'json'
+						})
+					event.preventDefault();
+					return false;
+					});
+				});
+		form(name="Save", id = "save")
+			input(type="submit", value="Save")

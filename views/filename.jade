@@ -1,0 +1,91 @@
+extends layout
+
+block content
+	div(id="sidebar")
+		a(href='/signout', class='text-center new-account') Sign Out
+		div(id="programlan")
+			div(id="homesidebar", class="langbar")
+				img(src="/images/HomeIcon.png", class="logo")
+				p(class="bartxt") Home
+			div(id="javasidebar", class="langbar")
+				img(src="/images/javalogo.png", class="logo")
+				p(class="bartxt") Java
+			div(id="pythonsidebar", class="langbar")
+				img(src="/images/Pythonlogo.png", class="logo")
+				p(class="bartxt") Python
+			div(id="csharpsidebar", class="langbar")
+				img(src="/images/csharplogo.png", class="logo")
+				p(class="bartxt") C#
+
+	div(id="Userfile")
+	div(id="editorholder")
+		div(id="holders")
+			h1(id="titles")
+			input(type="submit", value="Save", class='save')
+		div(id="editor")
+	div(id="newfilebg")
+		div(id="rename", class="signcard")
+			h1(id="EnterName") Enter File Name
+			form(id = "filename", method ="post")
+				input(id="new_name",name ="newname", type ="text", placeholder="File Name")
+				input(id="Okay", type="button", value="Okay")
+
+		script(src="src/ace.js", type="text/javascript")
+		script(type="text/javascript").
+			var editor=ace.edit("editor");
+				editor.setTheme("ace/theme/monokai");
+			var datas, filedata;
+			if (typeof datas === 'undefined'){
+				if(typeof !{JSON.stringify(doc)} === 'undefined'){
+				datas= " ";
+				}else{
+				datas = !{JSON.stringify(doc)};
+				}
+			}
+			filedata = JSON.parse(datas);
+			showfilename(filedata);
+			console.log(filedata);
+			$('#javasidebar').click(function(){
+				if (typeof datas === 'undefined'){
+				if(typeof !{JSON.stringify(doc)} === 'undefined'){
+				datas= " ";
+				}else{
+				datas = !{JSON.stringify(doc)};
+				}
+			}
+			filedata = JSON.parse(datas);
+				showlangfile(filedata["java"], "java");
+			});
+			$('#pythonsidebar').click(function(){
+				if (typeof datas === 'undefined'){
+				if(typeof !{JSON.stringify(doc)} === 'undefined'){
+				datas= " ";
+				}else{
+				datas = !{JSON.stringify(doc)};
+				}
+			}
+			filedata = JSON.parse(datas);
+				showlangfile(filedata["python"], "python");
+			});
+			$('#csharpsidebar').click(function(){
+				if (typeof datas === 'undefined'){
+				if(typeof !{JSON.stringify(doc)} === 'undefined'){
+				datas= " ";
+				}else{
+				datas = !{JSON.stringify(doc)};
+				}
+			}
+			filedata = JSON.parse(datas);
+				showlangfile(filedata["csharp"], "csharp");
+			});
+			$('#homesidebar').click(function(){
+				if (typeof datas === 'undefined'){
+				if(typeof !{JSON.stringify(doc)} === 'undefined'){
+				datas= " ";
+				}else{
+				datas = !{JSON.stringify(doc)};
+				}
+			}
+			filedata = JSON.parse(datas);
+				showfilename(filedata);
+			});

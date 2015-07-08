@@ -1,0 +1,436 @@
+body{
+	margin: 0;
+	padding:0;
+	height: 100%;
+}
+html{
+	height: 100%;
+}
+#bodycontent{
+	position: relative;
+	overflow: auto;
+	margin: 0;
+	padding:0;
+}
+#WebTitle{
+	font-family: Georgia, Times, 'Times New Roman', serif;
+	font-size: 150px;
+	color: #D0D0CF;
+	overflow: auto;
+	letter-spacing: 2px;
+  	margin: 0;
+	padding:0;
+}
+
+#titlehead{
+	position: absolute;
+	left:50%;
+	top:50%;
+	transform: translate(-50%,-50%);
+}
+
+#btnlogin,#btnsignup{
+	width: 160px;
+	border-sizing: border-box;
+	float:right;
+	float: left;
+	border-width: 1px;
+	border-style: solid;
+	border-color:  #EE564B #EE564B #EE564B;
+	background-color: #EE564B;
+	line-height: 36px;
+	letter-spacing: 2px;
+	position: relative;
+	left: 50%;
+	transform: translate(-100%, 0%);
+	color: #D0D0CF;
+	font-family: Georgia, Times, 'Times New Roman', serif;
+	font-size:18px;
+	font-weight:bolder;
+	margin:5px;
+}
+.btn{
+	z-index: 100;
+}
+
+#title{
+  	background-image: url("/images/bg.png");
+  	background-attachment: fixed;
+  	background-position: top center;
+	background-size: cover;
+	height: 100%;
+	margin: 0;
+	padding:0;
+	width: 100%;
+	z-index: -1;
+}
+#content{
+	height: 100%;
+	position: fixed;
+	margin: 0;
+	padding:0;
+	width: 100%;
+	overflow: auto;
+}
+
+#info,#languages,#joinus{
+	position: relative;
+	color: white;
+	height: 100%;
+	width: 100%;
+	background-color: #2D2D2D;
+	margin: 0;
+	padding:0;
+	overflow: hidden;
+	z-index: 1;
+	background-attachment: fixed;
+}
+
+#infoholder, #langholder, #joinholder{
+	position: absolute;
+	top:50%;
+	left: 50%;
+	width: 100%;
+	transform: translate(-50%, -50%);
+	overflow: hidden;
+}
+
+#infotitle h2, #languagestitle h2, #jointitle h2{
+	font-size: 70px !important;
+}
+
+#infotitle,#languagestitle,#jointitle{
+	position: relative;
+	text-align: center;
+ 	left: 50%;
+  	transform: translate(-50%, 0%);
+  	font-family: Georgia, Times, 'Times New Roman', serif;
+	color: #EE564B;
+	letter-spacing: 2px;
+	overflow: hidden;
+
+}
+
+#infocontent,#languagescontext,#joincontext{
+	position: relative;
+	width: 700px;
+	height: 450px;
+	font-size:24px;
+	line-height: 30px;
+ 	left: 50%;
+ 	color: #D0D0CF;
+	transform: translate(-50%, 0%);
+	padding: 0;
+	margin: 0;
+	overflow: hidden;
+
+}
+#contenttxt,#languagestxt,#jointxt{
+	width: 100%;
+	text-align: center;
+	position: relative;
+	top:0;
+	margin: 0;
+	padding: 0;
+	left: 50%;
+	transform:translate(-50%, 0%);
+	overflow: hidden;
+}
+
+#iconimage,#langimage,#log{
+	position: fixed;
+	padding-top: 75px;
+	overflow: hidden;
+}
+
+#addimage,#editimage,#saveimage,#javaimage,#pythonimage,#csharpimage{
+	padding: 0;
+	margin: 2px;
+	position: relative;
+	top: 100%;
+	float:left;
+	overflow: hidden;
+}
+
+#addimage p,#editimage p,#saveimage p, #javaimage p,#pythonimage p,#csharpimage p, h3, .logo {
+	position: relative;
+	text-align: center;
+	color: #EE564B;
+	overflow: hidden;
+}
+
+.log{
+	position: relative;
+	z-index: 2;
+	width: 100%;
+	height: 50%;
+	padding:0;
+	margin: 0;
+}
+
+#signcard{
+	float: left;
+	position: relative;
+	margin: 5px;
+	width: 274px;
+	overflow: hidden;
+}
+
+#signupcard{
+	float: right;
+	position: relative;
+	overflow: hidden;
+	margin: 5px;
+	width: 274px;
+}
+.username{
+	border-sizing: border-box;
+	border-width: 1px;
+	border-style: solid;
+	border-color: #C0C0C0 #D9D9D9 #D9D9D9;
+	border-radius: 1px;
+	background: url("/images/User.png") no-repeat scroll 12px 12px;
+	background-color: white;
+	padding-left: 30px;
+	height: 35px;
+	width: 88%;
+	margin-bottom: 10px;
+	position: relative;
+	font-family: Georgia, Times, 'Times New Roman', serif;
+	font-size: 15px;
+	overflow: hidden;
+}
+.password{
+	border-sizing: border-box;
+	border-width: 1px;
+	border-style: solid;
+	border-color: #C0C0C0 #D9D9D9 #D9D9D9;
+	border-radius: 1px;
+	background: url("/images/Lock.png") no-repeat scroll 12px 12px;
+	background-color: white;
+	padding-left: 30px;
+	height: 35px;
+	width: 88%;
+	margin-bottom: 10px;
+	position: relative;
+	font-family: Georgia, Times, 'Times New Roman', serif;
+	font-size: 15px;
+	overflow: hidden
+}
+
+#SignIn, #singup, #cancel,#Okay{
+	border-sizing: border-box;
+	border-width: 1px;
+	border-style: solid;
+	border-color:  #EE564B  #EE564B  #EE564B ;
+	background-color: #EE564B ;
+	width:100%;
+	line-height: 36px;
+	position: relative;
+	color: #D0D0CF;
+	letter-spacing: 2px;
+	font-family: Georgia, Times, 'Times New Roman', serif;
+	font-size:18px;
+	font-weight:bolder;
+	margin-bottom: 10px;
+	overflow: hidden;
+}
+
+#sidebar{
+	height:100%;
+	width:230px;
+	float:left;
+	position: relative;
+	overflow: hidden;
+	background-color: #2D2D2D;
+	-webkit-box-shadow: 10px 0px 21px -8px rgba(0,0,0,0.75);
+	-moz-box-shadow: 10px 0px 21px -8px rgba(0,0,0,0.75);
+	box-shadow: 10px 0px 21px -8px rgba(0,0,0,0.75);
+	z-index: 100;
+}
+
+#Userfile{
+	height: 100%;
+	top: 0%;
+	border: 0;
+	outline: 0;
+	overflow: hidden;
+	vertical-align: baseline;
+	background-color: #2D2D2D;
+}
+
+.FileCard{
+	position: relative;
+	margin: 5px;
+	float:left;
+}
+
+.FileCard p{
+	text-align: center;
+	position: relative;
+	font-family: Georgia, Times, 'Times New Roman', serif;
+	font-size:24px;
+	font-weight:bolder;
+	color: #D0D0CF;
+}
+
+#programlan{
+	top: 50%;
+	left: 50%;
+	width: 100%;
+	transform: translate(-50%, -50%);
+	position: absolute;
+	overflow: hidden;
+	margin: 0;
+	padding:0;
+	display: inline-block;
+}
+
+.langbar:hover{
+	background-color: #EE564B;
+}
+.langbar{
+	display: inline-block;
+	line-height: 0px
+	overflow: hidden;
+	width: 100%;
+	position: relative;
+	margin: 0;
+	padding: 5px;
+	z-index: 1;
+	line-height: 36px;
+
+}
+
+#javasidebar img, #pythonsidebar img, #csharpsidebar img, #homesidebar img{
+	position: absolute;
+	width: 30px;
+	height: 30px;
+	top:50%;
+	left:15%;
+	transform: translate(15%, -50%);
+	padding: 0;
+	margin:0;
+}
+
+.bartxt{
+	text-align: center;
+	position: relative;
+	font-size:24px;
+	padding:0px;
+	padding-left: 0px;
+	margin:0;
+	color: #D0D0CF;
+}
+
+#editorholder{
+	display: none;
+	position: absolute;
+	top: 0%;
+	left: 230px !important;
+	width: -moz-calc(100% - 231px);
+	width: -webkit-calc(100% - 231px);
+	width: calc(100% - 231px);
+	height: 100% !important;
+	overflow: hidden;
+	padding: 0;
+	margin:0;
+	background-color: #2D2D2D;
+	z-index: -1;
+}
+#holders{
+	position: relative;
+	top: 0;
+	width: 100%;
+	background-color: #2D2D2D;
+	height: 80px;
+}
+#titles{
+	float:left;
+	margin-left:5px;
+	color: #D0D0CF; 
+}
+#editor{
+	positon:absolute;
+	width:100% !important;
+	height:100%;
+}
+
+.save{
+	width: 160px;
+	border-sizing: border-box;
+	border-width: 1px;
+	border-style: solid;
+	border-color:  #EE564B  #EE564B  #EE564B ;
+	background-color: #EE564B;
+	line-height: 35px;
+	position: relative;
+	color: white;
+	font-family: Georgia, Times, 'Times New Roman', serif;
+	font-size:18px;
+	font-weight:bolder;
+	margin-right: 10px;
+	float: right;
+	transform: translate(0%, 50%);
+}
+.save:hover{
+	background-color:#2F3140;
+}
+#newfilebg{
+	display: none;
+	position: absolute;
+	top: 0%;
+	left: 230px !important;
+	width: -moz-calc(100% - 231px);
+	width: -webkit-calc(100% - 231px);
+	width: calc(100% - 231px);
+	height: 100% !important;
+	overflow: hidden;
+	padding: 0;
+	margin:0;
+	background-color: #2D2D2D;
+
+}
+#rename{
+	position: absolute;
+	top:50%;
+	left:50%;
+	transform: translate(-50%, -50%);
+}
+.signcard{
+	width: 274px;
+	padding: 35px;
+	margin: 0px auto 25px;
+	border-width: 1px;
+	border-style: solid;
+	border-sizing: border-box;
+	border-color: white;
+	box-shadow: 0 0 10px #000000;
+	-webkit-box-shadow: 0 0 10px #000000;
+	-moz-box-shadow: 0 0 10px #000000;
+	background-color: #f7f7f7;
+	position: absolute;
+	top:50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+#new_name{
+	border-sizing: border-box;
+	border-width: 1px;
+	border-style: solid;
+	border-color: #C0C0C0 #D9D9D9 #D9D9D9;
+	border-radius: 1px;
+	padding-left: 30px;
+	height: 35px;
+	width: 88%;
+	margin-bottom: 10px;
+	position: relative;
+	font-family:Georgia, Times, 'Times New Roman', serif;
+	font-size: 15px
+}
+#errormsg{
+	color: #D24F3D ;
+	text-align: center;
+	font-weight: 900;
+	font-size: 24px;
+}

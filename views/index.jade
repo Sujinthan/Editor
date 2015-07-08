@@ -1,0 +1,92 @@
+extends layout
+
+block content
+	div(id="bodycontent")
+		div(id="content")
+			div(id="title")
+				div(id="titlehead")
+					h1(id="WebTitle") OPUS
+					div(class="btn")
+						button(id="btnlogin",onclick="showlogin()") Login
+						div(class="divider")
+						button(id="btnsignup", onclick="showlogin()") Sign Up
+			div(id="info")
+				dif(id="infoholder")
+					div(id="infotitle")
+						h2 Create, Edit, and Save
+					div(id="infocontent")
+						div(id="contenttxt")
+							p Create, edit and save programming files online using OPUS. OPUS supports three languages: Java, Python and C#. All the files you create on OPUS are saved online for you to access from anywhere
+						div(id="iconimage")
+							div(id="addimage")
+								img(src="/images/Addiconlight.png", id="addicon")
+								p Create
+							div(id="editimage")
+								img(src="/images/Editicon.png", id="editicon")
+								p Edit
+							div(id="saveimage")
+								img(src="/images/saveIcon.png", id="saveicon")
+								p Save
+			div(id="languages")
+				div(id="langholder")
+					div(id="languagestitle")
+						h2 Languages
+					div(id="languagescontext")
+						div(id="languagestxt")
+							p OPUS currently supports three languages: Java, Python and C#. Create, and/or edit files written in one of the languages. OPUS uses Ace Editor which includes syntax highlighter
+						div(id="langimage")
+							div(id="javaimage")
+								img(src="/images/Java.png", id="javaicon")
+								p Java
+							div(id="pythonimage")
+								img(src="/images/Python.png", id="pythonicon")
+								p Python
+							div(id="csharpimage")
+								img(src="/images/csharp.png", id="csharpicon")
+								p C#
+			div(id="joinus")
+				div(id="joinholder")
+					div(id="jointitle")
+						h2 Join Us
+					div(id="joincontext")
+						div(id="jointxt")
+							p It is easy to sign up, no email is required and it’s free
+						div(class="log")
+							div( id="signcard")
+								form(id ="login", method ="post", action="/login")
+									h3 Sing In
+									input(type="text", name="username", placeholder="Username", class = "username")
+									br
+									input(type="password", name="password", placeholder ="Password", class = "password")
+									br
+									input(id="SignIn", type="submit", value="Sign In")
+
+							div( id="signupcard")
+								form(id ="newuser", method ="post", action="/newuser")
+									h3 Sing Up
+									input(type="text", name="username", placeholder="Choose your username", class = "username")
+									br
+									input(type="password", name="password", id="passwords", placeholder ="Password", class = "password")
+									br
+									input(type="password", id="confirmPassword", placeholder="Confirm Password", onkeyup="checkPass(); ", class = "password")
+									span(id="MatchMsg")
+									br
+									input(id = "singup", type="submit", value="Sign Up")
+
+	script(src='javascripts/parallax.js'). 
+	script.
+		function checkPass(){
+			var pass1 = document.getElementById("passwords")
+			var pass2 = document.getElementById("confirmPassword")
+			var message = document.getElementById("MatchMsg")
+			var goodColor = "#00B22A";
+			var badColor = "#C22230";
+			if(pass1.value==pass2.value){
+				pass2.style.backgroundColor=goodColor;
+				message.style.color = goodColor;
+				}
+			else{
+				pass2.style.backgroundColor = badColor;
+				message.style.color = badColor;
+				}
+		}

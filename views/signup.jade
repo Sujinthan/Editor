@@ -1,0 +1,41 @@
+extends layout
+
+block content
+	h1 #{title}
+	form(id ="newuser", method ="post", action="/newuser")
+		label
+			|Choose your username
+		br
+		input(type="text", name="username", placeholder="Username")
+		br
+		label
+			|Create a password
+		br
+		input(type="password", name="password", id="passwords",
+			placeholder ="Password")
+		br
+		label
+			|Confirm your password
+		br
+		input(type="password", id="confirmPassword", palaceholder="Confirm Password", onkeyup="checkPass(); ")
+		span(id="MatchMsg")
+		br
+		input(id="signup", type="submit", value="signup")
+	script.
+		function checkPass(){
+			var pass1 = document.getElementById("passwords")
+			var pass2 = document.getElementById("confirmPassword")
+			var message = document.getElementById("MatchMsg")
+			var goodColor = "#66cc66";
+			var badColor = "#ff6666";
+			if(pass1.value==pass2.value){
+				pass2.style.backgroundColor=goodColor;
+				message.style.color = goodColor;
+				message.innerHtml= "Password Match!"
+				}
+			else{
+				pass2.style.backgroundColor = badColor;
+				message.style.color = badColor;
+				message.innerHTML = "Passwords Do Not Match!"
+				}
+		}
