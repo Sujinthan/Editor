@@ -1,5 +1,3 @@
 # Editor
-OPUS is a workspace for developer.
-
-#Try the Opuse at: 
-opusworkspace.herokuapp.com
+IDE Workspace
+#[Try the workspace at](www.opusworkspace.herokuapp.com)
