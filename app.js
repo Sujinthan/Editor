@@ -39,7 +39,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(app.router);
 
 /*Database Connectons*/
-Parse.initialize('iLpYywtOlyXRU4BJir9wT3s0PHuVByTmaHimlGFe', 'nC2BboXInP4decut8Ts49i1zScpKqrnU1wJnSZIV')
+Parse.initialize()
 
 var initPassport = require('./passport/init');
 initPassport(passport);
